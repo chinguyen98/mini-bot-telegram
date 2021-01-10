@@ -35,7 +35,7 @@ class QuoteService
             $offset = rand(0, 5000);
             $endpoint = self::BASE_RANDOM_QUOTE_ENDPOINT . $offset;
             $apikey = strtr("Token apikey", [
-                'apikey' => env('PAPER_QUOTES_API_KEY'),
+                'apikey' => config('paper_quotes_api_key'),
             ]);
 
             $response = $this->client->get($endpoint, [
